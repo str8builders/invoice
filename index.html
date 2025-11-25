@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#0f172a', // slate-900
+                gray: '#f8fafc', // slate-50
+                accent: '#4f46e5' // indigo-600
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @media print {
+        @page { margin: 0; size: auto; }
+        body { margin: 0; -webkit-print-color-adjust: exact; background: white !important; }
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        .print-container { 
+            box-shadow: none !important; 
+            margin: 0 !important; 
+            width: 100% !important; 
+            max-width: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+        }
+        .print-p-12 { padding: 3rem !important; }
+        input, textarea { 
+            border: none !important; 
+            resize: none !important; 
+            padding: 0 !important; 
+            background: transparent !important;
+            color: black !important;
+        }
+        /* Hide placeholders in print */
+        ::placeholder { color: transparent; }
+      }
+      
+      /* Custom scrollbar for textareas */
+      textarea::-webkit-scrollbar {
+        width: 4px;
+      }
+      textarea::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      textarea::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "jspdf-autotable": "https://aistudiocdn.com/jspdf-autotable@^5.0.2",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "papaparse": "https://aistudiocdn.com/papaparse@^5.5.3",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-800">
+    <div id="root"></div>
+  </body>
+</html>

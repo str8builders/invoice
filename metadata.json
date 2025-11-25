@@ -1,0 +1,5 @@
+{
+  "name": "STR8 Builders Invoice Generator",
+  "description": "A professional NZ invoice generator for STR8 Builders with AI-powered assistance for line item generation and description polishing.",
+  "requestFramePermissions": []
+}
